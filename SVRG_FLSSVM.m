@@ -11,7 +11,7 @@ for k=1:itn
         fprintf('\n*****************************iter1: %d ******************************\n', j);
         i=randi([1,l]);
         fprintf('\n*****************************randi: %d ******************************\n', i);
-        g=grad(X,Y,i,alpha_w,b,C,type,gamma,K,l)-(grad(X,Y,i,alpha,b,C,type,gamma,K,l)-grada_Rl);
+        g=grad_FLSSVM(X,Y,i,alpha_w,b,C,type,gamma,K,l)-(grad_FLSSVM(X,Y,i,alpha,b,C,type,gamma,K,l)-grada_Rl);
         alpha_w=alpha_w-learning_rate*g;
     end
     alpha=alpha_w;
