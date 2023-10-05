@@ -1,8 +1,8 @@
-% Ä³Ò»¸öÑù±¾µÄÌİ¶È
-function[f]=grad(X,Y,i,alpha,b,C,type,gamma,K,l)
+% æŸä¸€ä¸ªæ ·æœ¬çš„æ¢¯åº¦
+function[f]=grad_FLSSVM(X,Y,i,alpha,b,C,type,gamma,K,l)
 k=kernel(X,X(i,:),type,gamma,1);
-% e=Y(i,:)*k.*alpha;%ÓĞÎó£¬eÓ¦¸ÃÊÇ¸öÊı
-e=Y(i,:)*k'*alpha-1;%¸¶ĞŞ¸Ä
+% e=Y(i,:)*k.*alpha;%æœ‰è¯¯ï¼Œeåº”è¯¥æ˜¯ä¸ªæ•°
+e=Y(i,:)*k'*alpha-1;%ä»˜ä¿®æ”¹
 % f=1/l*K*alpha+2*C*b*Y(i,:)*k.*e./((1+b*e.*e).^2);
-f=1/l*K*alpha+2*C*b*Y(i,:)*e/((1+b*e*e)^2)*k;%¸¶ĞŞ¸Ä
+f=1/l*K*alpha+2*C*b*Y(i,:)*e/((1+b*e*e)^2)*k;%ä»˜ä¿®æ”¹
 end
